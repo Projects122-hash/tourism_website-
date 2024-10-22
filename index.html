@@ -7,6 +7,24 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
     <title>Web Design Mastery | Travel.co</title>
+    <style>
+        /* Add some basic styles to improve visibility */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .journey__container {
+            margin-top: 20px;
+        }
+        .journey__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .country__card img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -21,25 +39,25 @@
         </ul>
     </nav>
 
-        <div class="video__container">
-            <video autoplay loop muted class="background__video">
-                <source src="video.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-            </video>
-            <div class="section__container">
-                <div class="header__content">
-                    <h1>Travel</h1>
-                    <p>
-                        Embark on a journey of a lifetime and explore the world's most
-                        breathtaking destinations with our expert travel advice. From exotic
-                        beaches to cultural wonders, we've got you covered with our
-                        comprehensive travel guides and insider tips.
-                    </p>
-                    <a href="blog.html"><button>Read more</button></a>
-                </div>
+    <div class="video__container">
+        <video autoplay loop muted class="background__video">
+            <source src="video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+        <div class="section__container">
+            <div class="header__content">
+                <h1>Travel</h1>
+                <p>
+                    Embark on a journey of a lifetime and explore the world's most
+                    breathtaking destinations with our expert travel advice. From exotic
+                    beaches to cultural wonders, we've got you covered with our
+                    comprehensive travel guides and insider tips.
+                </p>
+                <a href="blog.html"><button onclick="showMessage()">Read more</button></a>
             </div>
         </div>
-    </header>
+    </div>
+    <header>
 
     <section class="journey__container">
         <div class="section__container">
@@ -89,58 +107,56 @@
                     </div>
                 </div>
                 <div class="country__card">
-                  <img src="barcelona.jpg" alt="country" />
-                  <div class="country__name">
-                      <i class="ri-map-pin-2-fill"></i>
-                      <span>Barcelona, Spain</span>
-                  </div>
-              </div>
-              <div class="country__card">
-                <img src="tokyo.jpg" alt="country" />
-                <div class="country__name">
-                    <i class="ri-map-pin-2-fill"></i>
-                    <span>Tokyo, Japan</span>
+                    <img src="barcelona.jpg" alt="country" />
+                    <div class="country__name">
+                        <i class="ri-map-pin-2-fill"></i>
+                        <span>Barcelona, Spain</span>
+                    </div>
                 </div>
-            </div>
+                <div class="country__card">
+                    <img src="tokyo.jpg" alt="country" />
+                    <div class="country__name">
+                        <i class="ri-map-pin-2-fill"></i>
+                        <span>Tokyo, Japan</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-<!-- Video Section with Moving Plane and Cloud Background -->
-<section class="video__container">
-    <div class="section__container">
-        <h2 id="explore-title" class="section__title">Explore the World with Us</h2>
-        <div class="earth__container">
-            <img src="planee.png" alt="Moving Plane" class="rotating-earth" />
+    <!-- Video Section with Moving Plane and Cloud Background -->
+    <section class="video__container">
+        <div class="section__container">
+            <h2 id="explore-title" class="section__title">Explore the World with Us</h2>
+            <div class="earth__container">
+                <img src="planee.png" alt="Moving Plane" class="rotating-earth" />
+            </div>
+        </div>
+    </section>
+
+    <div class="reviews-section">
+        <h2>Read Our Reviews</h2>
+        <br> <br>
+        <a href="review.html" class="review-button">Read Reviews</a>
+    </div>
+
+    <br>
+
+    <div class="card-container">
+        <div class="card" onclick="window.location.href='offers.html'">
+            <div class="card-content">
+                <p class="card-text">Check out our exciting offers and discounts for your next trip!</p>
+                <div class="card-title">Offers</div>
+            </div>
+        </div>
+        <div class="card" onclick="window.location.href='aboutus.html'">
+            <div class="card-content">
+                <p class="card-text">Know more about us</p>
+                <div class="card-title">About Us</div>
+            </div>
         </div>
     </div>
-</section>
-
-<div class="reviews-section">
-    <h2>Read Our Reviews</h2>
-    <br> <br>
-    <a href="review.html" class="review-button">Read Reviews</a>
 </div>
-
-<br>
-
-<div class="card-container">
-    <div class="card" onclick="window.location.href='offers.html'">
-        <div class="card-content">
-            <p class="card-text">Check out our exciting offers and discounts for your next trip!</p>
-            <div class="card-title">Offers</div>
-        </div>
-    </div>
-    <div class="card" onclick="window.location.href='aboutus.html'">
-        <div class="card-content">
-            <p class="card-text">Know more about us</p>
-            <div class="card-title">About Us</div>
-        </div>
-    </div>
-        </div>
-    </div>
-</div>
-
 
     <!-- Footer Section -->
     <footer>
@@ -158,5 +174,17 @@
             </p>
         </div>
     </footer>
+
+    <script>
+        // Show a welcome alert when the page loads
+        window.onload = function() {
+            alert("Welcome to Travel.co! Explore the world with us.");
+        };
+
+        // Function to show a message when the "Read more" button is clicked
+        function showMessage() {
+            alert("Thank you for your interest! Stay tuned for more articles on our blog.");
+        }
+    </script>
 </body>
 </html>
