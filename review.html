@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Reviews | Travel.co</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__logo"><a href="index.html">Travel.co</a></div>
+      <ul class="nav__links">
+          <li class="link"><a href="index.html">Home</a></li>
+          <li class="link"><a href="blog.html">Blog</a></li>
+          <li class="link"><a href="offers.html">Offers</a></li>
+          <li class="link"><a href="contacts.html">Contacts</a></li>
+          <li class="link"><a href="review.html">Reviews</a></li>
+          <li class="link"><a href="aboutus.html">About Us</a></li>
+      </ul>
+  </nav>
+    <section class="reviews" ng-app="reviewApp" ng-controller="reviewCtrl">
+            <h1>Traveler Reviews</h1>
+            
+            <!-- Display Existing Reviews -->
+            <div class="review-list">
+              <!-- Each review will be displayed here using AngularJS -->
+              <div class="review" ng-repeat="review in reviews">
+                <h3>{{review.author}}</h3>
+                <p>{{review.content}}</p>
+                <hr />
+              </div>
+            </div>
+            
+            <!-- Add New Review -->
+            <div class="add-review">
+              <h2>Add Your Review</h2>
+              <input type="text" ng-model="newReview.author" placeholder="Your Name" required />
+              <textarea ng-model="newReview.content" placeholder="Write your review..." required></textarea>
+              <button ng-click="addReview()">Submit Review</button>
+            </div>
+          </section>
+
+              <!-- Footer Section -->
+    <footer>
+      <div class="section__container">
+          <h4>Travel.co</h4>
+          <div class="social__icons">
+              <span><i class="ri-facebook-fill"></i></span>
+              <span><i class="ri-twitter-fill"></i></span>
+              <span><i class="ri-instagram-line"></i></span>
+              <span><i class="ri-linkedin-fill"></i></span>
+          </div>
+          <p>
+              Travel makes one modest. You see what a tiny place you occupy in the
+              world.
+          </p>
+      </div>
+  </footer>
+      
+          <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+          <script>
+            var app = angular.module('reviewApp', []);
+            app.controller('reviewCtrl', function($scope) {
+              // Existing reviews
+              $scope.reviews = [
+                { author: 'Arein Parmar', content: 'I recently booked a week-long vacation through here, and it exceeded all my expectations! From the moment I landed, everything was perfectly arranged – from airport transfers to guided tours. The local experiences were well-curated, giving me a real taste of the culture, food, and landscapes.' },
+                { author: 'Sitanshu Kumar', content: 'The highlight was definitely the personalized service. The customer support team was always available to answer my questions, and they even helped me customize my itinerary on the go. I felt completely taken care of throughout the trip.' }
+              ];
+      
+              // Add a new review
+              $scope.addReview = function() {
+                if ($scope.newReview.author && $scope.newReview.content) {
+                  $scope.reviews.push({
+                    author: $scope.newReview.author,
+                    content: $scope.newReview.content
+                  });
+                  // Clear input fields after submission
+                  $scope.newReview.author = '';
+                  $scope.newReview.content = '';
+                }
+              };
+            });
+          </script>
+        </body>
+      </html>

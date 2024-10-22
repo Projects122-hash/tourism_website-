@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Contact Us | Travel.co</title>
+</head>
+<body>
+    <nav>
+        <div class="nav__logo"><a href="#">Travel.co</a></div>
+        <ul class="nav__links">
+            <li class="link"><a href="index.html">Home</a></li>
+            <li class="link"><a href="blog.html">Blog</a></li>
+            <li class="link"><a href="offers.html">Offers</a></li>
+            <li class="link"><a href="services.html">Services</a></li>
+            <li class="link"><a href="contacts.html">Contacts</a></li>
+        </ul>
+    </nav>
+    
+    <header class="section__header">
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you! Reach out for inquiries or assistance.</p>
+    </header>
+
+    <section class="contact__container">
+        <div class="section__container">
+            <form class="contact__form" id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+            <div id="successMessage" style="display:none; color: green; margin-top: 20px;">
+                Your message has been sent successfully!
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="section__container">
+            <h4>Travel.co</h4>
+            <div class="social__icons">
+                <span><i class="ri-facebook-fill"></i></span>
+                <span><i class="ri-twitter-fill"></i></span>
+                <span><i class="ri-instagram-line"></i></span>
+                <span><i class="ri-linkedin-fill"></i></span>
+            </div>
+            <p>Travel makes one modest. You see what a tiny place you occupy in the world.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            // Perform validation if needed (basic checks are already handled by HTML5 required attributes)
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (name && email && message) {
+                // If valid, display success message
+                document.getElementById('successMessage').style.display = 'block';
+                
+                // Optionally, reset the form
+                this.reset();
+            } else {
+                alert('Please fill out all fields.');
+            }
+        });
+    </script>
+</body>
+</html>
